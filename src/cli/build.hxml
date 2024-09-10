@@ -1,0 +1,4 @@
+-cp src
+--main cli.CLI
+--neko run.n
+# --macro cli.Macros.packDir('whatever')
