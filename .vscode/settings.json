@@ -1,0 +1,27 @@
+{
+    "haxe.configurations": [
+        {
+            "label": "Dev",
+            "args": [
+                "-cp src",
+                "-cpp bin/cpp"
+            ],
+            "files": [
+                "src/flip/*.hx",
+                "src/flip/**/*.hx"
+            ]
+        },
+        {
+            "label":"CLI",
+            "args": [
+                "-cp src",
+                "-main cli.CLI",
+                "-neko ../run.n"
+            ],
+            "files": [
+                "src/cli/**/*.hx",
+                "src/cli/*.hx"
+            ]
+        }
+    ]
+}
