@@ -1,0 +1,85 @@
+<!ELEMENT app (
+    name?,
+    entrypoint?,
+    flags?,
+    cdefines?,
+    requires?,
+    conflicts?,
+    provides?,
+    stacksize?,
+    icon?,
+    order?,
+    sdkheaders?,
+    targets?,
+    resources?,
+    sources?,
+    appversion?,
+    appicon?,
+    applibs?,
+    appcategory?,
+    appdescription?,
+    appauthor?,
+    appurl?,
+    appiconassets?,
+    extbuild?,
+    libembedded?
+)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT entrypoint (#PCDATA)>
+    <!ELEMENT flags (#PCDATA)>
+    <!ELEMENT cdefines (define*)>
+        <!ELEMENT define EMPTY>
+        <!ATTLIST define name CDATA #REQUIRED>
+    <!ELEMENT requires (require*)>
+        <!ELEMENT require EMPTY>
+            <!ATTLIST require id CDATA #REQUIRED>
+    <!ELEMENT conflicts (conflict*)>
+        <!ELEMENT conflict EMPTY>
+            <!ATTLIST conflict id CDATA #REQUIRED>
+    <!ELEMENT provides (provide*)>
+        <!ELEMENT provide EMPTY>
+            <!ATTLIST provide name CDATA #REQUIRED>
+    <!ELEMENT stacksize (#PCDATA)>
+    <!ELEMENT icon EMPTY>
+        <!ATTLIST icon path CDATA #REQUIRED>
+    <!ELEMENT order (#PCDATA)>
+    <!ELEMENT sdkheaders (header*)>
+        <!ELEMENT header EMPTY>
+            <!ATTLIST header path CDATA #REQUIRED>
+    <!ELEMENT targets (all | f7)>
+    <!ELEMENT resources EMPTY>
+        <!ATTLIST resources path CDATA #REQUIRED>
+    <!ELEMENT sources (source*)>
+        <!ELEMENT source EMPTY>
+            <!ATTLIST source path CDATA #REQUIRED>
+    <!ELEMENT appversion (#PCDATA)>
+    <!ELEMENT appicon EMPTY>
+        <!ATTLIST appicon path CDATA #REQUIRED>
+    <!ELEMENT applibs (library)>
+        <!ELEMENT library EMPTY>
+            <!ATTLIST library id CDATA #REQUIRED>
+    <!ELEMENT appcategory (#PCDATA)>
+    <!ELEMENT appdescription (#PCDATA)>
+    <!ELEMENT appauthor (#PCDATA)>
+    <!ELEMENT appurl (#PCDATA)>
+    <!ELEMENT appiconassets EMPTY>
+        <!ATTLIST appiconassets path CDATA #REQUIRED>
+    <!ELEMENT extbuild (build*)>
+        <!ELEMENT build EMPTY>
+            <!ATTLIST build path CDATA #REQUIRED command CDATA #REQUIRED>
+    <!ELEMENT embedded (True | False)>
+<!ATTLIST app
+    id CDATA #REQUIRED
+    type (
+        SERVICE     |
+        SYSTEM      |
+        APP         |
+        PLUGIN      |
+        DEBUG       |
+        ARCHIVE     |
+        SETTINGS    |
+        STARTUP     |
+        EXTERNAL    |
+        METAPACKAGE
+    ) "EXTERNAL"
+>

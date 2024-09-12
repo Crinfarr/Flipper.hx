@@ -4,11 +4,32 @@
             "label": "Dev",
             "args": [
                 "-cp src",
-                "-cpp bin/cpp"
+                "--macro registerCustomMetadata({metadata: ':manifest',doc: 'test documentation'})"
             ],
             "files": [
                 "src/flip/*.hx",
-                "src/flip/**/*.hx"
+            ]
+        },
+        {
+            "label": "CPP externs",
+            "args": [
+                "-cp src",
+                "-cpp bin/_cpp"
+            ],
+            "files": [
+                "src/flip/extern/cxx/*.hx",
+                "src/flip/extern/cxx/**/*.hx"
+            ]
+        },
+        {
+            "label": "Python externs",
+            "args": [
+                "-cp src",
+                "-python bin/_py"
+            ],
+            "files": [
+                "src/flip/extern/py/*.hx",
+                "src/flip/extern/py/**/*.hx"
             ]
         },
         {
